@@ -11,6 +11,29 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 dnf5 install -y tmux 
+dnf5 -y copr enable solopasha/hyprland
+dnf5 -y install			\
+	hyprland			\
+	hyprpaper			\
+	hyprpicker			\
+	hypridle			\
+	hyprlock			\
+	hyprsunset			\
+	hyprpolkitagent		\
+	hyprsysteminfo		\
+	hyprpanel			\
+	qt6ct-kde			\
+	hyprland-qt-support	\
+	hyprland-qtutils
+dnf5 -y copr disable solopasha/hyprland
+
+# more desktop-environment utils
+dnf5 -y install		\
+	kitty			\
+	sddm			\
+	pipewire		\
+	wofi			\
+	brightnessctl
 
 # Use a COPR Example:
 #
